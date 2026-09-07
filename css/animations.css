@@ -1,0 +1,117 @@
+/* ============================================================
+   ANIMATIONS
+   All keyframes + the classes JS toggles to trigger them.
+   Respects prefers-reduced-motion at the bottom.
+   ============================================================ */
+
+/* -- Reveal on scroll (base) -- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+[data-reveal].in-view { opacity: 1; transform: translateY(0); }
+
+[data-reveal="fade"] { transform: none; }
+[data-reveal="zoom"] { transform: scale(0.92); }
+[data-reveal="zoom"].in-view { transform: scale(1); }
+[data-reveal="left"] { transform: translateX(-32px); }
+[data-reveal="left"].in-view { transform: translateX(0); }
+[data-reveal="right"] { transform: translateX(32px); }
+[data-reveal="right"].in-view { transform: translateX(0); }
+
+/* stagger children with inline --delay set by JS */
+[data-reveal] { transition-delay: var(--delay, 0s); }
+
+/* -- Keyframes -- */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+  to { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes typingCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 400; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* -- Ripple effect element (JS injects a span.ripple on click) -- */
+.ripple-parent { position: relative; overflow: hidden; }
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  transform: scale(0);
+  pointer-events: none;
+  animation: ripple 0.6s ease-out;
+}
+
+/* -- Typing effect caret -- */
+.typing-caret {
+  display: inline-block;
+  width: 2px;
+  margin-left: 2px;
+  background: var(--accent);
+  animation: typingCursor 0.9s step-start infinite;
+}
+
+/* -- Graph line draw -- */
+.graph-bg path {
+  stroke-dasharray: 400;
+  animation: drawLine 2.4s var(--ease) forwards;
+}
+
+/* -- Card hover lift (generic) -- */
+.card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+
+/* -- Animated gradient text for hero highlight word -- */
+.text-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* -- Reduced motion -- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] { opacity: 1; transform: none; }
+}

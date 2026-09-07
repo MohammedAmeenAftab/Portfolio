@@ -1,0 +1,94 @@
+/* ============================================================
+   RESPONSIVE
+   Mobile-first overrides layered on top of style.css.
+   Breakpoints: 1080 / 860 / 600
+   ============================================================ */
+
+/* -- Large desktop tightening -- */
+@media (max-width: 1080px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .github-grid { grid-template-columns: repeat(2, 1fr); }
+  .gh-graph-placeholder { grid-column: span 2; grid-template-columns: repeat(20, 1fr); }
+  .os-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8) var(--space-6); }
+}
+
+/* -- Tablet -- */
+@media (max-width: 860px) {
+  :root { --space-24: 4rem; --space-16: 2.5rem; }
+
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+
+  #navbar.mobile-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-4) var(--space-6) var(--space-8);
+    gap: 0;
+  }
+  #navbar.mobile-open .nav-links a { width: 100%; padding: 14px 10px; }
+
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-lede { margin-left: auto; margin-right: auto; }
+  .hero-cta { justify-content: center; }
+  .hero-meta { justify-content: center; }
+  .hero-visual { max-width: 320px; margin: var(--space-8) auto 0; order: -1; }
+
+  .about-grid { grid-template-columns: 1fr; gap: var(--space-12); }
+  .strengths-grid { grid-template-columns: 1fr; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+
+  .projects-grid { grid-template-columns: 1fr; }
+
+  .exp-item { grid-template-columns: 1fr; gap: var(--space-2); }
+
+  .grid-3, .grid-2 { grid-template-columns: 1fr 1fr; }
+  .github-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .os-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: 1fr; }
+
+  .contact-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+  .form-row { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* -- Mobile -- */
+@media (max-width: 600px) {
+  .container { padding: 0 var(--space-4); }
+  .section { padding: var(--space-16) 0; }
+
+  .hero-title { font-size: 2.1rem; }
+  .hero-cta { flex-direction: column; width: 100%; }
+  .hero-cta .btn { width: 100%; }
+  .hero-meta { flex-wrap: wrap; gap: var(--space-4); }
+
+  .section-title { font-size: var(--fs-2xl); }
+
+  .grid-3, .grid-2, .os-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .github-grid { grid-template-columns: 1fr 1fr; }
+  .gh-graph-placeholder { grid-template-columns: repeat(14, 1fr); }
+
+  .resume-card { flex-direction: column; text-align: center; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .footer-bottom { flex-direction: column; gap: var(--space-4); text-align: center; }
+
+  .modal-content { padding: var(--space-6); }
+
+  #cursor-glow { display: none; }
+
+  .theme-picker { right: -8px; min-width: 190px; }
+}

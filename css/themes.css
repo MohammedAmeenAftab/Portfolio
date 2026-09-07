@@ -1,0 +1,352 @@
+/* ============================================================
+   THEMES.CSS
+   ------------------------------------------------------------
+   13 drop-in color themes. Each one overrides the same set of
+   CSS variables defined in css/style.css, so nothing else in
+   the codebase needs to change — just set:
+
+       <html data-theme="terminal">
+
+   ...or let the JS theme-switcher (see script.js) do it for you.
+   Load this file AFTER style.css and BEFORE responsive.css:
+
+       <link rel="stylesheet" href="css/style.css" />
+       <link rel="stylesheet" href="css/themes.css" />
+       <link rel="stylesheet" href="css/animations.css" />
+       <link rel="stylesheet" href="css/responsive.css" />
+
+   Themes 1–2 (midnight / daylight) match the original defaults
+   in style.css and are repeated here so all themes live in one
+   place once you wire up the switcher.
+   ============================================================ */
+
+/* ---------------------------------------------------------
+   1. MIDNIGHT SIGNAL — default dark (blue/violet accent)
+   --------------------------------------------------------- */
+[data-theme="midnight"] {
+  --bg: #0a0d14;
+  --bg-elevated: #10141d;
+  --surface: #131826;
+  --surface-hover: #182035;
+  --border: #232b3d;
+  --border-strong: #333e57;
+  --text-primary: #e9ecf5;
+  --text-secondary: #9aa3b8;
+  --text-muted: #626d85;
+  --accent: #6c8eff;
+  --accent-soft: rgba(108, 142, 255, 0.12);
+  --accent-2: #ffb454;
+  --accent-2-soft: rgba(255, 180, 84, 0.12);
+  --success: #4ade80;
+  --danger: #f87171;
+  --gradient-accent: linear-gradient(135deg, #6c8eff 0%, #8f6cff 50%, #ff8fd6 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(108,142,255,0.06) 0%, rgba(108,142,255,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   2. DAYLIGHT — default light (blue accent)
+   --------------------------------------------------------- */
+[data-theme="daylight"] {
+  --bg: #f6f7fb;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #eef1fa;
+  --border: #e3e6f0;
+  --border-strong: #cdd3e6;
+  --text-primary: #12141f;
+  --text-secondary: #4b5468;
+  --text-muted: #848da3;
+  --accent: #4c69db;
+  --accent-soft: rgba(76, 105, 219, 0.08);
+  --accent-2: #d68d1e;
+  --accent-2-soft: rgba(214, 141, 30, 0.1);
+  --success: #16a34a;
+  --danger: #dc2626;
+  --gradient-accent: linear-gradient(135deg, #4c69db 0%, #7a5cd6 50%, #d65cb0 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(76,105,219,0.05) 0%, rgba(76,105,219,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   3. TERMINAL — phosphor-green hacker console
+   --------------------------------------------------------- */
+[data-theme="terminal"] {
+  --bg: #060a06;
+  --bg-elevated: #0a100a;
+  --surface: #0e150e;
+  --surface-hover: #131d13;
+  --border: #1e2e1e;
+  --border-strong: #2c452c;
+  --text-primary: #d8f5d8;
+  --text-secondary: #8fb88f;
+  --text-muted: #567056;
+  --accent: #4dff88;
+  --accent-soft: rgba(77, 255, 136, 0.1);
+  --accent-2: #ffdf4d;
+  --accent-2-soft: rgba(255, 223, 77, 0.1);
+  --success: #4dff88;
+  --danger: #ff5d5d;
+  --gradient-accent: linear-gradient(135deg, #4dff88 0%, #23d47c 50%, #a8ff4d 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(77,255,136,0.06) 0%, rgba(77,255,136,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   4. SUNSET AMBER — warm dark, ember accent
+   --------------------------------------------------------- */
+[data-theme="sunset"] {
+  --bg: #120d0a;
+  --bg-elevated: #18110c;
+  --surface: #1e1712;
+  --surface-hover: #261d15;
+  --border: #33261a;
+  --border-strong: #4a3a26;
+  --text-primary: #f5ece1;
+  --text-secondary: #c4a98f;
+  --text-muted: #8a715a;
+  --accent: #ff8a3d;
+  --accent-soft: rgba(255, 138, 61, 0.12);
+  --accent-2: #ffce54;
+  --accent-2-soft: rgba(255, 206, 84, 0.12);
+  --success: #7fd858;
+  --danger: #ff6161;
+  --gradient-accent: linear-gradient(135deg, #ff8a3d 0%, #ff5d7a 50%, #ffce54 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255,138,61,0.08) 0%, rgba(255,138,61,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   5. NORDIC FROST — light, cool slate + ice-blue accent
+   --------------------------------------------------------- */
+[data-theme="nordic"] {
+  --bg: #eef1f5;
+  --bg-elevated: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #e6ebf2;
+  --border: #dbe2ea;
+  --border-strong: #b9c5d3;
+  --text-primary: #232b36;
+  --text-secondary: #536178;
+  --text-muted: #8a97a8;
+  --accent: #3d84a8;
+  --accent-soft: rgba(61, 132, 168, 0.1);
+  --accent-2: #a9727c;
+  --accent-2-soft: rgba(169, 114, 124, 0.1);
+  --success: #4c9a6a;
+  --danger: #c05a5a;
+  --gradient-accent: linear-gradient(135deg, #3d84a8 0%, #5f7fbf 50%, #7f6fc9 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(61,132,168,0.06) 0%, rgba(61,132,168,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   6. CYBERPUNK — dark, magenta + cyan neon
+   --------------------------------------------------------- */
+[data-theme="cyberpunk"] {
+  --bg: #0b0714;
+  --bg-elevated: #120c1e;
+  --surface: #170f26;
+  --surface-hover: #201533;
+  --border: #2c1f42;
+  --border-strong: #422f61;
+  --text-primary: #f2e9ff;
+  --text-secondary: #b19fd6;
+  --text-muted: #6f5f94;
+  --accent: #ff3ec8;
+  --accent-soft: rgba(255, 62, 200, 0.12);
+  --accent-2: #35f0ff;
+  --accent-2-soft: rgba(53, 240, 255, 0.12);
+  --success: #35f0ff;
+  --danger: #ff3e6c;
+  --gradient-accent: linear-gradient(135deg, #ff3ec8 0%, #a13eff 50%, #35f0ff 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255,62,200,0.08) 0%, rgba(255,62,200,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   7. EVERGREEN — dark forest, mint accent
+   --------------------------------------------------------- */
+[data-theme="evergreen"] {
+  --bg: #0a1210;
+  --bg-elevated: #0e1815;
+  --surface: #121f1a;
+  --surface-hover: #182a23;
+  --border: #223830;
+  --border-strong: #305347;
+  --text-primary: #e3f2ea;
+  --text-secondary: #9fc0af;
+  --text-muted: #628374;
+  --accent: #3ddc97;
+  --accent-soft: rgba(61, 220, 151, 0.12);
+  --accent-2: #d9c25e;
+  --accent-2-soft: rgba(217, 194, 94, 0.12);
+  --success: #3ddc97;
+  --danger: #ef6f6f;
+  --gradient-accent: linear-gradient(135deg, #3ddc97 0%, #2fb7c9 50%, #9fe870 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(61,220,151,0.07) 0%, rgba(61,220,151,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   8. ROSE QUARTZ — light, mauve/pink accent
+   --------------------------------------------------------- */
+[data-theme="rose-quartz"] {
+  --bg: #fbf4f5;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f6e9eb;
+  --border: #eeddE0;
+  --border-strong: #ddc0c5;
+  --text-primary: #2c1a1e;
+  --text-secondary: #6b4a51;
+  --text-muted: #a3818a;
+  --accent: #c65b74;
+  --accent-soft: rgba(198, 91, 116, 0.1);
+  --accent-2: #b98a4e;
+  --accent-2-soft: rgba(185, 138, 78, 0.1);
+  --success: #4c9a6a;
+  --danger: #c0405a;
+  --gradient-accent: linear-gradient(135deg, #c65b74 0%, #b364b8 50%, #e0916c 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(198,91,116,0.06) 0%, rgba(198,91,116,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   9. OCEAN DEEP — dark navy, teal accent
+   --------------------------------------------------------- */
+[data-theme="ocean"] {
+  --bg: #061018;
+  --bg-elevated: #09161f;
+  --surface: #0d1e29;
+  --surface-hover: #122735;
+  --border: #1c3547;
+  --border-strong: #294c64;
+  --text-primary: #e2f1f5;
+  --text-secondary: #93b4c2;
+  --text-muted: #6c8798;
+  --accent: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --accent-2: #60a5fa;
+  --accent-2-soft: rgba(96, 165, 250, 0.12);
+  --success: #2dd4bf;
+  --danger: #f87171;
+  --gradient-accent: linear-gradient(135deg, #2dd4bf 0%, #38a1e0 50%, #6c8eff 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(45,212,191,0.07) 0%, rgba(45,212,191,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   10. SOLARIZED DARK — classic Solarized palette
+   --------------------------------------------------------- */
+[data-theme="solarized-dark"] {
+  --bg: #002b36;
+  --bg-elevated: #073642;
+  --surface: #083b47;
+  --surface-hover: #0d4653;
+  --border: #12525f;
+  --border-strong: #1c6a79;
+  --text-primary: #eee8d5;
+  --text-secondary: #93a1a1;
+  --text-muted: #5f7a7a;
+  --accent: #268bd2;
+  --accent-soft: rgba(38, 139, 210, 0.14);
+  --accent-2: #b58900;
+  --accent-2-soft: rgba(181, 137, 0, 0.14);
+  --success: #859900;
+  --danger: #dc322f;
+  --gradient-accent: linear-gradient(135deg, #268bd2 0%, #2aa198 50%, #859900 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(38,139,210,0.07) 0%, rgba(38,139,210,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   11. SOLARIZED LIGHT
+   --------------------------------------------------------- */
+[data-theme="solarized-light"] {
+  --bg: #fdf6e3;
+  --bg-elevated: #ffffff;
+  --surface: #fffdf6;
+  --surface-hover: #eee8d5;
+  --border: #ded6c1;
+  --border-strong: #c3baa2;
+  --text-primary: #073642;
+  --text-secondary: #586e75;
+  --text-muted: #93a1a1;
+  --accent: #268bd2;
+  --accent-soft: rgba(38, 139, 210, 0.1);
+  --accent-2: #cb4b16;
+  --accent-2-soft: rgba(203, 75, 22, 0.1);
+  --success: #859900;
+  --danger: #dc322f;
+  --gradient-accent: linear-gradient(135deg, #268bd2 0%, #2aa198 50%, #859900 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(38,139,210,0.05) 0%, rgba(38,139,210,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   12. MONOCHROME — pure grayscale, one accent
+   --------------------------------------------------------- */
+[data-theme="monochrome"] {
+  --bg: #0d0d0d;
+  --bg-elevated: #131313;
+  --surface: #181818;
+  --surface-hover: #212121;
+  --border: #2b2b2b;
+  --border-strong: #3d3d3d;
+  --text-primary: #f2f2f2;
+  --text-secondary: #a3a3a3;
+  --text-muted: #6b6b6b;
+  --accent: #f2f2f2;
+  --accent-soft: rgba(242, 242, 242, 0.1);
+  --accent-2: #8a8a8a;
+  --accent-2-soft: rgba(138, 138, 138, 0.12);
+  --success: #6bcf7f;
+  --danger: #e05c5c;
+  --gradient-accent: linear-gradient(135deg, #ffffff 0%, #a3a3a3 50%, #6b6b6b 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(242,242,242,0.05) 0%, rgba(242,242,242,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   13. CRIMSON — dark, bold red accent
+   --------------------------------------------------------- */
+[data-theme="crimson"] {
+  --bg: #120909;
+  --bg-elevated: #180c0c;
+  --surface: #1e1010;
+  --surface-hover: #291515;
+  --border: #3a1c1c;
+  --border-strong: #562727;
+  --text-primary: #f5e7e7;
+  --text-secondary: #c79f9f;
+  --text-muted: #8a6666;
+  --accent: #ff4d5e;
+  --accent-soft: rgba(255, 77, 94, 0.12);
+  --accent-2: #ffb454;
+  --accent-2-soft: rgba(255, 180, 84, 0.12);
+  --success: #6bcf7f;
+  --danger: #ff4d5e;
+  --gradient-accent: linear-gradient(135deg, #ff4d5e 0%, #ff2ea1 50%, #ffb454 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255,77,94,0.08) 0%, rgba(255,77,94,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   14. LAVENDER DREAM — light, soft purple accent
+   (example custom theme — copy this block to add your own)
+   --------------------------------------------------------- */
+[data-theme="lavender"] {
+  --bg: #f5f2fb;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #ece5f7;
+  --border: #ddd2ee;
+  --border-strong: #c3b0e0;
+  --text-primary: #241b33;
+  --text-secondary: #5c4f74;
+  --text-muted: #8d7fa8;
+  --accent: #8b5cf6;
+  --accent-soft: rgba(139, 92, 246, 0.1);
+  --accent-2: #ec4899;
+  --accent-2-soft: rgba(236, 72, 153, 0.1);
+  --success: #4c9a6a;
+  --danger: #dc2626;
+  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(139,92,246,0.06) 0%, rgba(139,92,246,0) 100%);
+}
+
+/* ---------------------------------------------------------
+   Theme metadata for the JS switcher.
+   Each entry: value = data-theme attribute, label = shown to
+   user, swatch = the color used for the little preview dot,
+   mode = "dark" | "light" (controls which navbar sun/moon icon
+   shows, if you're wiring that up too).
+   --------------------------------------------------------- */
