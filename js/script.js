@@ -473,19 +473,19 @@ D.about.languages.forEach((language) => {
   /* ============================================================
      RENDER: BLOG
      ============================================================ */
-  function renderBlog() {
-    const wrap = $("#blog-grid");
-    D.blog.forEach((b) => {
-      const card = el("a", "card blog-card");
-      card.href = b.link;
-      card.setAttribute("data-reveal", "fade");
-      card.innerHTML = `
-        <span class="tag">${b.tag}</span>
-        <h4>${b.title}</h4>
-        <div class="blog-meta"><span>${b.date}</span><span>${b.readTime} read</span></div>`;
-      wrap.appendChild(card);
-    });
-  }
+  // function renderBlog() {
+  //   const wrap = $("#blog-grid");
+  //   D.blog.forEach((b) => {
+  //     const card = el("a", "card blog-card");
+  //     card.href = b.link;
+  //     card.setAttribute("data-reveal", "fade");
+  //     card.innerHTML = `
+  //       <span class="tag">${b.tag}</span>
+  //       <h4>${b.title}</h4>
+  //       <div class="blog-meta"><span>${b.date}</span><span>${b.readTime} read</span></div>`;
+  //     wrap.appendChild(card);
+  //   });
+  // }
 
   /* ============================================================
      RENDER: FAQ
@@ -720,7 +720,7 @@ D.about.languages.forEach((language) => {
     renderStats();
     renderCodingProfiles();
     renderOpenSource();
-    renderBlog();
+    // renderBlog();
     renderFaq();
     renderContact();
     renderFooter();
