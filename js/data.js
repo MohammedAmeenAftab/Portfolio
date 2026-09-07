@@ -116,15 +116,15 @@ const PORTFOLIO_DATA = {
           { name: "HTML", level: 85 },
           { name: "CSS", level: 78 },
           { name: "JavaScript", level: 80 },
-          { name: "React", level: 72 }
+          { name: "React", level: 62 }
         ]
       },
       {
         name: "Backend & Database",
         items: [
           { name: "Java", level: 60 },
-          { name: "Spring Boot", level: 64 },
-          { name: "MySQL", level: 76 },
+          { name: "Spring Boot", level: 34 },
+          { name: "MySQL", level: 66 },
           { name: "SQL", level: 78 }
         ]
       },
@@ -465,16 +465,16 @@ const PORTFOLIO_DATA = {
   {
     q: "Where can I see your code?",
     a: "You can explore my projects and source code on my GitHub profile: github.com/MohammedAmeenAftab."
-  },
-  {
-    q: "Are you working on anything outside software development?",
-    a: "Yes. I am also writing a fictional novel titled 'RB: The One Blood', which is a long-term creative project I plan to complete over approximately two years."
   }
+  // {
+  //   q: "Are you working on anything outside software development?",
+  //   a: "Yes. I am also writing a fictional novel titled 'RB: The One Blood', which is a long-term creative project I plan to complete over approximately two years."
+  // }
 ],
   /* ---------- NUMBERS / STATS ---------- */
 stats: [
   {
-    value: 3,
+    value: 6,
     suffix: "+",
     label: "Projects"
   },
@@ -484,8 +484,8 @@ stats: [
     label: "Internship"
   },
   {
-    value: 3,
-    suffix: "",
+    value: 10,
+    suffix: "+",
     label: "GitHub Repositories"
   },
   {

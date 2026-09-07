@@ -332,9 +332,9 @@ D.about.languages.forEach((language) => {
   const wrap = $("#github-grid");
 
   const cards = [
-    { value: "4", label: "Public Repositories" },
-    { value: "3", label: "Featured Projects" },
-    { value: "Java", label: "Primary Project Language" },
+    { value: "9+", label: "Public Repositories" },
+    { value: "9", label: "Featured Projects" },
+    { value: "Java/Python", label: "Primary Project Language" },
     { value: "2026", label: "Active Development" }
   ];
 
@@ -462,9 +462,9 @@ D.about.languages.forEach((language) => {
   function renderOpenSource() {
     const wrap = $("#os-grid");
     const items = [
-      { value: "3", label: "Public Projects" },
-      { value: "5", label: "GitHub Repositories" },
-      { value: "7", label: "LeetCode Problems" },
+      { value: "8+", label: "Public Projects" },
+      { value: "11+", label: "GitHub Repositories" },
+      { value: "15+", label: "LeetCode Problems" },
       { value: "1", label: "Developer Internship" }
     ];
     items.forEach((i) => wrap.appendChild(el("div", "card os-card", `<div class="os-value">${i.value}</div><div class="os-label">${i.label}</div>`)));
